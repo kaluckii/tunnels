@@ -13,7 +13,7 @@
       "description": "List of tunnels definitions to be exposed.",
       "items": {
         "type": "object",
-        "required": ["name"],
+        "required": ["prefix", "port"],
         "properties": {
           "prefix": {
             "type": "string",
