@@ -5,7 +5,7 @@ import path from 'path';
 
 const require = createRequire(import.meta.url);
 
-export async function stopPM2Tunnels(): Promise<void> {
+export async function stopPM2Processes(): Promise<void> {
   // Stops all PM2 processes and deletes them.
 
   const pm2Main = require.resolve('pm2');
@@ -18,5 +18,5 @@ export async function stopPM2Tunnels(): Promise<void> {
 }
 
 export async function runCommand(): Promise<void> {
-  await stopPM2Tunnels();
+  await stopPM2Processes();
 }
