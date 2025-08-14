@@ -1,0 +1,34 @@
+{
+  "name": "tunnels",
+  "version": "1.0.0",
+  "description": "Utility for creating multiple tunnels loopholes.",
+  "author": "Kaluckii",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "tunnels": "./dist/main.js"
+  },
+  "files": [
+    "static"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.0",
+    "pm2": "^6.0.8",
+    "prompts": "^2.4.2",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.0.15",
+    "@types/prompts": "^2.4.9",
+    "prettier": "^3.6.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}

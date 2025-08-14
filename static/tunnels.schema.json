@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "tunnels-config",
+  "type": "object",
+  "description": "Configuration file for tunnels loophole utility.",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Internal field for JSON schema support."
+    },
+    "tunnels": {
+      "type": "array",
+      "description": "List of tunnels definitions to be exposed.",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "description": "Prefix for loophole subdomain."
+          },
+          "port": {
+            "type": "number",
+            "description": "Port to be redirected."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["tunnels"],
+  "additionalProperties": false
+}
