@@ -2,6 +2,8 @@
 
 Typescript cli-utility for exposing tunnels on local machine via loophole, supports Windows and Linux.
 
+After editing anything in package, very important to build tsup - `bun run build`.
+
 ## Commands
 
 ### `tunnels init`
