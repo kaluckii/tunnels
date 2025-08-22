@@ -6,7 +6,7 @@ import { cac } from 'cac';
 import fs from 'fs-extra';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-export const commandList = ['init', 'run', 'status', 'stop'] as const;
+export const commandList = ['init', 'run', 'status', 'stop', 'logs'] as const;
 
 async function runModule(command: string, options: Record<string, any>) {
   // Checks if the command is valid and exists in the command list.
@@ -32,6 +32,13 @@ for (const command of commandList) {
     return runModule(command, options);
   });
 }
+
+// Unknown command handler
+cli.command('*', 'Invalid command').action((command: string) => {
+  console.error(`\nUnknown command: "${command}"`);
+  console.log('Available commands:', commandList.join(', '));
+  process.exit(1);
+});
 
 // Additional help and version information.
 cli.help();
