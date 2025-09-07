@@ -1,9 +1,14 @@
 import { defineConfig } from 'tsup';
 
-export default defineConfig({
-  entry: ['src/main.ts', 'src/modules/**/*.ts'],
-  format: ['esm'],
+const tsupConfig = defineConfig({
   outDir: 'dist',
+  entry: ['src/index.ts'],
+  format: ['esm'],
+  target: 'esnext',
+  sourcemap: true,
+  dts: true,
   clean: true,
-  target: 'es2022',
+  splitting: false,
 });
+
+export default tsupConfig;

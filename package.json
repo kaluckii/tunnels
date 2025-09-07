@@ -1,34 +1,43 @@
 {
-  "name": "tunnels",
-  "version": "1.0.0",
-  "description": "Utility for creating multiple tunnels loopholes.",
-  "author": "Kaluckii",
-  "license": "MIT",
-  "type": "module",
-  "bin": {
-    "tunnels": "./dist/main.js"
-  },
-  "files": [
-    "static"
-  ],
-  "scripts": {
-    "build": "tsup"
-  },
-  "dependencies": {
-    "cac": "^6.7.14",
-    "execa": "^9.6.0",
-    "fs-extra": "^11.3.0",
-    "pm2": "^6.0.8",
-    "prompts": "^2.4.2",
-    "zod": "^4.0.17"
-  },
+  "name": "grammy-fsm",
+  "version": "0.0.1",
+  "author": "Ilya Kalutskii",
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.0.15",
-    "@types/prompts": "^2.4.9",
     "prettier": "^3.6.2",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0"
-  }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "description": "Extension for grammY framework that adds finite state machine (FSM) capabilities.",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "grammy": "^1.38.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalutskii/grammy-fsm.git"
+  },
+  "homepage": "https://github.com/kalutskii/grammy-fsm#readme",
+  "keywords": [
+    "grammy",
+    "fsm",
+    "telegram-bot",
+    "state-machine"
+  ]
 }
